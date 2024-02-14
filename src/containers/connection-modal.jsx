@@ -8,7 +8,7 @@ import extensionData from '../lib/libraries/extensions/index.jsx';
 import {connect} from 'react-redux';
 
 import {closeConnectionModal} from '../reducers/modals';
-import {isMicroBitUpdateSupported, selectAndUpdateMicroBit} from '../lib/microbit-update';
+// import {isMicroBitUpdateSupported, selectAndUpdateMicroBit} from '../lib/microbit-update';
 
 class ConnectionModal extends React.Component {
     constructor (props) {
@@ -131,10 +131,11 @@ class ConnectionModal extends React.Component {
         });
 
         // TODO: get this functionality from the extension
-        return selectAndUpdateMicroBit(progressCallback);
+        // return selectAndUpdateMicroBit(progressCallback);
     }
     render () {
-        const canUpdatePeripheral = (this.props.extensionId === 'microbit') && isMicroBitUpdateSupported();
+        // const canUpdatePeripheral = (this.props.extensionId === 'microbit') && isMicroBitUpdateSupported();
+        const canUpdatePeripheral = false;
         return (
             <ConnectionModalComponent
                 connectingMessage={this.state.extension && this.state.extension.connectingMessage}
